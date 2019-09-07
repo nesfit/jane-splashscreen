@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+  redirect-blockbook:
+    image: nginx:alpine-perl
+    container_name: jane-redirect-blockbook
+    environment:
+      - "VIRTUAL_HOST=${MOZARCH_VIRTUAL_HOST}"
+      - "LETSENCRYPT_HOST=${MOZARCH_VIRTUAL_HOST}"
+      - "LETSENCRYPT_EMAIL=${EMAIL}"
+      - "REDIRECT_HOST=${MOZARCH_REDIRECT_HOST}"
+    expose:
+      - "80"
+    volumes:
+      - "./redirect/nginx.conf:/etc/nginx/nginx.conf"
+      - "./redirect/vhostd.conf:/etc/nginx/conf.d/default.conf"
+    network_mode: bridge
+    restart: always
+
+

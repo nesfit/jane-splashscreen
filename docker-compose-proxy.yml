@@ -26,17 +26,18 @@ services:
     restart: always
     network_mode: bridge
 
-  web:
-    image: nginx:stable-alpine
-    container_name: jane-splashscreen
-    environment:
-      - "VIRTUAL_HOST=${VIRTUAL_HOST}"
-      - "LETSENCRYPT_HOST=${VIRTUAL_HOST}"
-      - "LETSENCRYPT_EMAIL=${EMAIL}"
-    expose:
-      - "80"
-    volumes:
-      - "./web:/usr/share/nginx/html"
-    network_mode: bridge
-    restart: always
+#  web:
+#    image: nginx:stable-alpine
+#    container_name: jane-splashscreen
+#    environment:
+#      - "VIRTUAL_HOST=${VIRTUAL_HOST}"
+#      - "LETSENCRYPT_HOST=${VIRTUAL_HOST}"
+#      - "LETSENCRYPT_EMAIL=${EMAIL}"
+#    expose:
+#      - "80"
+#    volumes:
+#      - "./web:/usr/share/nginx/html"
+#    network_mode: bridge
+#    restart: always
+
 
