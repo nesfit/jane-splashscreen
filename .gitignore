@@ -1,0 +1,4 @@
+.env
+nginx/certs
+nginx/vhost.d
+nginx/html
